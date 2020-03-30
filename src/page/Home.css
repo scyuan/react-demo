@@ -1,13 +1,15 @@
 .input {
-  height: 60px;
+  height: 40px;
   width: 100%;
   border-radius: 0;
   outline: 0;
   border: 0;
-  border-bottom: 1px solid #ccc;
   padding: 0 5px;
   font-size: 16px;
   box-sizing: border-box;
+  background: #f1f1f1;
+  margin: 10px 0;
+  border-radius: 5px;
 }
 
 .todo-ul {
@@ -29,4 +31,46 @@
 .todo-ul li.todo-complete {
   text-decoration: line-through;
   color: #ccc;
+}
+
+.header {
+  height: 120px;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 15px 10px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.header .filters {
+  height: 34px;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  display: flex;
+  padding: 2px;
+  position: relative;
+}
+
+.header .filters a {
+  display: inline-block;
+  flex: 1;
+  color: #222;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 34px;
+  text-align: center;
+  z-index: 1;
+}
+
+.header .filters .slide-bar {
+  background: #fff;
+  position: absolute;
+  top: 2px;
+  width: 33.33%;
+  bottom: 2px;
+  border-radius: 5px;
+  z-index: 0;
+  transition: all 0.3s;
 }
