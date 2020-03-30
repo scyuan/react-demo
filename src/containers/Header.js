@@ -2,6 +2,8 @@ import React from 'react';
 import Filter from './Filter';
 import SlideBar from './SlideBar';
 import { connect } from 'react-redux';
+import { addTodo } from '../reducers/slices/todoSlice';
+
 const Header = ({ dispatch }) => {
   let input;
   return (
@@ -14,10 +16,7 @@ const Header = ({ dispatch }) => {
         onKeyDown={
           (e) => {
             if (e.keyCode === 13) {
-              dispatch({
-                type: 'ADD_TODO',
-                text: input.value
-              })
+              dispatch(addTodo(input.value))
               input.value = "";
             }
           }

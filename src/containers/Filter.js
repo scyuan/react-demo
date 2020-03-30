@@ -1,18 +1,8 @@
 import Filter from '../components/Filter';
 import { connect } from 'react-redux';
+import { setVisibility } from '../reducers/slices/visibilitySlice';
+import { setSliderBar } from '../reducers/slices/sliderBar';
 
-const setVisibilityFilter = (filter) => {
-  return {
-    type: 'SET_VISIBILITY_FILTER',
-    filter
-  }
-}
-const setSlideBar = (slide) => {
-  return {
-    type: 'SET_SLIDER_BAR',
-    slide
-  }
-}
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -23,8 +13,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     onClick: (e) => {
-      dispatch(setVisibilityFilter(ownProps.filter));
-      dispatch(setSlideBar(e.target.offsetLeft))
+      dispatch(setVisibility(ownProps.filter));
+      dispatch(setSliderBar(e.target.offsetLeft))
     }
   }
 }
